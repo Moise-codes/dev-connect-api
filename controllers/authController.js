@@ -13,3 +13,4 @@ exports.register = async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 };
+const { username, email, password } = req.body;
