@@ -47,6 +47,9 @@ exports.login = async (req, res) => {
   return res.status(400).json({ message: "All fields are required" });
 }
 const user = await User.findOne({ email });
+if (!user) {
+  return res.status(400).json({ message: "Invalid email or password" });
+}
     
   } catch (error) {
     res.status(500).json({ message: "Server error" });
