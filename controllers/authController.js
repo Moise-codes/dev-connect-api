@@ -25,6 +25,15 @@ const user = await User.create({
   email,
   password: hashedPassword,
 });
+res.status(201).json({
+  message: "User registered successfully",
+  user: {
+    _id: user._id,
+    username: user.username,
+    email: user.email,
+  },
+  token: generateToken(user._id),
+});
     
   } catch (error) {
     res.status(500).json({ message: "Server error" });
