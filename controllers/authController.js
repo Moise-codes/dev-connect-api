@@ -40,3 +40,10 @@ res.status(201).json({
   }
 };
 ;
+exports.login = async (req, res) => {
+  try {
+    
+  } catch (error) {
+    res.status(500).json({ message: "Server error" });
+  }
+};
