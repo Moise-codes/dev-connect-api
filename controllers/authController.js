@@ -6,3 +6,10 @@ const generateToken = (id) => {
     expiresIn: "7d",
   });
 };
+exports.register = async (req, res) => {
+  try {
+    
+  } catch (error) {
+    res.status(500).json({ message: "Server error" });
+  }
+};
